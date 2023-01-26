@@ -2,10 +2,6 @@ const toReadAll = () => {
     return "select * from pedidos";
 }
 
-const toReadId = (model) => {
-    return `SELECT * FROM pedidos WHERE id_pedido=${model.id}`;
-}
-
 const create = (model) => {
     let now = new Date
 	return `insert into pedidos value(default,'${model.nome}', '${model.endereco}', '${model.produto}', curdate(), curtime(), '${model.hora_entrega}', '${model.hora_fim}', ${model.entregador})`;
@@ -26,7 +22,6 @@ const toUpdate = (model) => {
 
 module.exports = {
     toReadAll,
-	toReadId,
     create,
     toDelete,
     toUpdate,
