@@ -2,11 +2,16 @@ const express = require('express');
 
 const router = express.Router();
 
-const PedidoController = require("../controllers/pedidos.controller");
+const PedidosController = require("../controllers/pedidos.controller");
+const EntregadoresController = require("../controllers/entregadores.controller");
 
 
-router.get('/read', PedidoController.listarPedido);
-router.post('/create', PedidoController.criarPedido);
-router.delete('/del/:id', PedidoController.del);
-router.put('/update', PedidoController.alterarPedido);
+router.get('/read', PedidosController.listarPedido);
+router.get('/readId/:id', PedidosController.listarPedidoId);
+router.post('/create', PedidosController.criarPedido);
+router.delete('/del/:id', PedidosController.del);
+router.put('/update', PedidosController.alterarPedido);
+
+router.post('/motoboy/login', EntregadoresController.Login);
+router.get('/motoboy/read', EntregadoresController.listarLogins);
 module.exports = router;

@@ -10,6 +10,21 @@ const listarPedido = (req, res) => {
     });
 }
 
+const listarPedidoId = (req, res) => {
+    con.query(pedido.toReadId(req.params), (err, result) => {
+        if (err == null) {
+            if (result.length > 0) {
+                res.json(result).end();
+            } else {
+                res.status(404).json(result).end();
+            }
+
+        } else {
+            res.status(500).json(err).end();
+        }
+    });
+}
+
 const criarPedido = async (req, res) => {
     con.query(pedido.create(req.body), (err, result) => {
         if (err == null) {
@@ -45,6 +60,7 @@ const alterarPedido = async (req, res) => {
 
 module.exports = {
     listarPedido,
+    listarPedidoId,
     criarPedido,
     alterarPedido,
     del
