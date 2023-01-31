@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body onLoad="carregar()">
+    <header>
+        <p class="f">gestão de pedidos</p>
+    </header>
+    <div class="form">
+        <p class="fText">Cliente:</p>
+        <input id="inpCliente" type="text">
+        <p class="fText">Endereco:</p>
+        <input id="inpEndereco" type="text">
+        <p class="fText">Pedido:</p>
+        <input id="inpPedido" type="text">
+        <button onClick="gerarPedido()">Gerar Pedido</button>
+    </div>
+    <div class="listas">
+        <div class="list">
+            <p><strong>em execução</strong></p>
+            <div class="item-list model">
+                <p id="id"></p>
+                <p id="nome"></p>
+                <p id="endereco"></p>
+                <p id="horario"></p>
+                <p id="produto"></p>
+                <p id="data"></p>
+                <button onClick="done()" class="doneBtn"><img src="../../docs/done.png" alt=""></button>
+            </div>
+        </div>
+        <div class="list2">
+            <p>a caminho</p>
+            <div class="item-list2 model">
+                <p id="id">1</p>
+                <p id="nome">asdf</p>
+                <p id="endereco">asdf</p>
+                <p id="horario">12:44</p>
+                <p id="horario-entrega"></p>
+                <p id="produto">fasdfasdf</p>
+                <p id="data">12/10/2023</p>
+                <button class="deliveredBtn"><img src="../../docs/delivered.png" alt=""></button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
